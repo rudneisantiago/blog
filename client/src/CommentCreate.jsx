@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
+import { appContext } from "./App";
 
 const CommentCreate = ({ postId }) => {
   const [content, setContent] = useState("");
+  const { setRefresh } = useContext(appContext);
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -12,6 +14,7 @@ const CommentCreate = ({ postId }) => {
     });
 
     setContent("");
+    setRefresh((old) => old + 1);
   };
 
   return (
