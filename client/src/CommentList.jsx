@@ -1,11 +1,4 @@
-import { useContext, useEffect } from "react";
-import { appContext } from "./App";
-
 const CommentList = ({ comments }) => {
-  const { refresh } = useContext(appContext);
-
-  useEffect(() => {}, [refresh]);
-
   const renderedComments = comments.map((comment) => {
     let content;
 
