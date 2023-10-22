@@ -41,6 +41,7 @@ const handleEvent = (type, data) => {
 };
 
 app.post("/events", (req, res) => {
+  console.log("Received Event", req.body.type);
   const { type, data } = req.body;
 
   handleEvent(type, data);
